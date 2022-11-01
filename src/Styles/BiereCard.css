@@ -1,0 +1,13 @@
+.biere-card {
+	height: 230px;
+	width: 420px;
+}
+
+.biere-card img {
+	max-width: 160px;
+	max-height: 220px;
+}
+
+.biere-card .card-body {
+	height: 210px;
+}

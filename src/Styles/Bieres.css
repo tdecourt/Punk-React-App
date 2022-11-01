@@ -1,0 +1,48 @@
+div.biere-type>label.btn-primary[for='Blanche'] {
+	background-color: rgb(248, 247, 83) !important;
+	border: none !important;
+	color: rgb(33, 37, 41) !important;
+}
+
+div.biere-type>label.btn-primary[for='Blonde'] {
+	background-color: rgb(236, 230, 26) !important;
+	border: none !important;
+	color: rgb(33, 37, 41) !important;
+}
+
+div.biere-type>label.btn-primary[for='Ambre'] {
+	background-color: rgb(188, 103, 51) !important;
+	border: none !important;
+	color: rgb(255, 255, 255) !important;
+}
+
+div.biere-type>label.btn-primary[for='Brune'] {
+	background-color: rgb(93, 52, 26) !important;
+	border: none !important;
+	color: rgb(255, 255, 255) !important;
+}
+
+
+div.biere-type>label.btn-primary[for='Blanche']:hover {
+	background-color: hsl(60, 92%, 45%) !important;
+	border: none !important;
+	color: rgb(33, 37, 41) !important;
+}
+
+div.biere-type>label.btn-primary[for='Blonde']:hover {
+	background-color: hsl(58, 85%, 41%) !important;
+	border: none !important;
+	color: rgb(33, 37, 41) !important;
+}
+
+div.biere-type>label.btn-primary[for='Ambre']:hover {
+	background-color: hsl(23, 57%, 37%) !important;
+	border: none !important;
+	color: rgb(255, 255, 255) !important;
+}
+
+div.biere-type>label.btn-primary[for='Brune']:hover {
+	background-color: hsl(23, 56%, 33%) !important;
+	border: none !important;
+	color: rgb(255, 255, 255) !important;
+}
