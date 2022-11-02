@@ -4,13 +4,7 @@ import '../Styles/Biere.css';
 
 const Biere = (data) => {
 	const params = useParams();
-	const biere = data.bieres[params.id - 1]
-	const typesBieres = [
-		{ nom: "Blanche", min: 0, max: 8 },
-		{ nom: "Blonde", min: 9, max: 20 },
-		{ nom: "Ambre", min: 21, max: 45 },
-		{ nom: "Brune", min: 46, max: 140 }
-	];
+	const biere = data.bieres[params.id - 1];
 
 
 	return (

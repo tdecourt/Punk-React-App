@@ -10,27 +10,15 @@ import Footer from './components/Footer';
 const App = () => {
   const [data, setData] = useState([]);
 
-  const getData = (params = { page: 1 }) => {
-    const baseUrl = 'https://api.punkapi.com/v2/beers?per_page=80';
-    // const request = '';
-    let request = '';
-    if (params)
-      for (const param in params) {
-        const value = params[param];
-        request += '&' + param + '=' + value
-      };
-
-    axios
-      .get(baseUrl + request)
-      .then(res => {
-        setData(data.concat(res.data));
-        // if (res.data.length === 80) getData({ page: params.page + 1 });
-      });
-  }
-
   // Le useEffect se joue lorsque le composant est monté
   useEffect(() => {
-    getData();
+    const url = 'https://api.punkapi.com/v2/beers?per_page=80';
+    axios
+      .get(url)
+      .then(res => {
+        setData(res.data);
+        // if (res.data.length === 80) getData({ page: params.page + 1 });
+      });
   }, []);
 
   return (
