@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import "../Styles/BiereCard.css";
 
 const BiereCard = (biere) => {
@@ -10,12 +11,12 @@ const BiereCard = (biere) => {
 	];
 
 	return (
-		<div className="card mb-3 overflow-hidden biere-card">
+		<NavLink to={'/biere/' + biere.id} className="card mb-3 overflow-hidden biere-card text-decoration-none text-reset">
 			<div className="row g-0">
-				<div className="col-md-4 text-center p-1">
+				<div className="col-4 text-center p-1">
 					<img src={biere.image_url} className="img-fluid rounded-start" alt="..." />
 				</div>
-				<div className="col-md-8">
+				<div className="col-8 position-relative">
 					<div className="card-body overflow-auto">
 						<h5 className="card-title">{biere.name}</h5>
 						<ul className="list-group list-group-flush">
@@ -27,7 +28,7 @@ const BiereCard = (biere) => {
 					</div>
 				</div>
 			</div>
-		</div>
+		</NavLink>
 	);
 };
 

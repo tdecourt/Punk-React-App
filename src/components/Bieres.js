@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import axios from "axios";
+import React, { useState } from 'react';
 import "../Styles/Bieres.css"
 import BiereCard from './BiereCard';
 
-const Bieres = ({ params }) => {
-	const [data, setData] = useState([]);
+const Bieres = (data) => {
 	const [nbBieres, setNbBieres] = useState(36);
 	const [selectedBeerType, setSelectedBeerType] = useState([]);
 	const typesBieres = [
@@ -24,24 +22,6 @@ const Bieres = ({ params }) => {
 		return isSelected;
 	};
 
-	// Le useEffect se joue lorsque le composant est monté
-	useEffect(() => {
-		const baseUrl = 'https://api.punkapi.com/v2/beers?per_page=80';
-		// const request = '';
-		let request = '';
-		if (params)
-			for (const param in params) {
-				const value = params[param];
-				request += '&' + param + '=' + value
-			};
-
-		axios
-			.get(baseUrl + request)
-			.then(res => {
-				setData(res.data);
-			});
-	}, []);
-
 	return (
 		<div>
 			<form className="container d-flex justify-content-evenly p-2 mb-2">
@@ -50,7 +30,7 @@ const Bieres = ({ params }) => {
 					className="form-range w-25 my-auto"
 					min="1"
 					max={
-						data
+						data.bieres
 							.filter(biere => (typeIsSelected(biere.ebc)) ? biere : null)
 							.length
 					}
@@ -87,14 +67,14 @@ const Bieres = ({ params }) => {
 				}
 			</form>
 			<p className="text-end text-muted mx-5 border-bottom">{
-				data
+				data.bieres
 					.filter(biere => (typeIsSelected(biere.ebc)) ? biere : null)
 					.slice(0, nbBieres)
 					.length
 			} showed result(s)</p>
 			<div className="d-flex justify-content-evenly flex-wrap">
 				{
-					data
+					data.bieres
 						.filter(biere => (typeIsSelected(biere.ebc)) ? biere : null)
 						.slice(0, nbBieres)
 						.map(biere => <BiereCard key={biere.id} biere={biere} />)
