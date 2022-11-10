@@ -26,7 +26,7 @@ build-pages:
 pages:
   stage: deploy
   script:
-    - ls #just something
+    - ls public #just something
   artifacts:
     paths:
       - public
