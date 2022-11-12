@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import "../Styles/Bieres.css"
-import BiereCard from './BiereCard';
+import BiereCard from '../components/BiereCard';
 
 const Bieres = data => {
 	const [nbBieres, setNbBieres] = useState(36);

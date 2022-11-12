@@ -20,7 +20,7 @@ const Navigation = () => {
 						</li>
 						<li className="nav-item">
 							<NavLink to="/about" className={(nav) => (nav.isActive ? "nav-link active" : "nav-link")}>
-								A propos
+								À propos
 							</NavLink>
 						</li>
 					</ul>

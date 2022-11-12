@@ -1,9 +1,9 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Bieres from './components/Bieres';
-import Biere from './components/Biere';
-import About from './components/About';
+import Bieres from './pages/Bieres';
+import Biere from './pages/Biere';
+import About from './pages/About';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 
