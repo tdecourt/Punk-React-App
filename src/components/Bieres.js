@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import "../Styles/Bieres.css"
 import BiereCard from './BiereCard';
 
-const Bieres = (data) => {
+const Bieres = data => {
 	const [nbBieres, setNbBieres] = useState(36);
 	const [selectedBeerType, setSelectedBeerType] = useState([]);
 	const typesBieres = [
@@ -12,7 +12,7 @@ const Bieres = (data) => {
 		{ nom: "Brune", min: 46, max: 140 }
 	];
 
-	const typeIsSelected = (ebc) => {
+	const typeIsSelected = ebc => {
 		if (selectedBeerType.length === 0) return true;
 		if (ebc === null) return false;
 		let isSelected = false;
@@ -21,6 +21,17 @@ const Bieres = (data) => {
 		});
 		return isSelected;
 	};
+
+	const isSelected = type => {
+		let res = false;
+		console.log(selectedBeerType);
+		for (const beerType of selectedBeerType) {
+			console.log(beerType, type);
+			if (beerType.nom === type.nom)
+				res = true;
+		}
+		return res;
+	}
 
 	return (
 		<div>
@@ -39,7 +50,7 @@ const Bieres = (data) => {
 				/>
 				{
 					typesBieres.map((type, index) =>
-						<div key={type.nom} className='biere-type'>
+						<div key={index} className='biere-type'>
 							<input
 								type="checkbox"
 								className="btn-check"
@@ -57,9 +68,7 @@ const Bieres = (data) => {
 								}}
 							/>
 							<label
-								className={
-									(false) ? "btn btn-success" : "btn btn-primary"
-								}
+								className={(isSelected(type)) ? "btn btn-success m-0" : "btn btn-primary m-0"}
 								htmlFor={type.nom}
 							>{type.nom}</label>
 						</div>
